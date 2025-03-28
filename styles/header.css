@@ -107,14 +107,21 @@
     
 }
 
-.upload-icon {
-    height: 24px;
+.create-button {
+    border: none;
+    border-radius: 20px;
+    font-family: Roboto;
+    font-size: 14px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.youtube-apps-icon {
-    height: 24px;
+.span-plus-icon {
+    font-size: 22px;
 }
-
 .div-notifications {
     position: relative;
 }
