@@ -104,7 +104,7 @@
     justify-content: space-between;
     width: 190px;
     padding-right: 35px;
-    
+    flex-shrink: 0;
 }
 
 .create-button {
