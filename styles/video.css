@@ -43,6 +43,20 @@
 
 .div-video-thumbnail {
     margin-bottom: 5px;
+    position: relative;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    background-color: black;
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
 .div-channel-picture {
