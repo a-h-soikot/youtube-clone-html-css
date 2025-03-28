@@ -6,6 +6,8 @@ p {
 body {
     margin: 0;
     padding-top: 80px;
+    padding-right: 35px;
+    padding-left: 240px;
 }
 
 button {
