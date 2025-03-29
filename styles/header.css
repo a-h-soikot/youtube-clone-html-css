@@ -61,7 +61,6 @@
 }
 
 .search-bar::placeholder {
-    font-family: Roboto, Arial;
     font-size: 15px;
 }
 
@@ -122,7 +121,7 @@
 .create-button {
     border: none;
     border-radius: 20px;
-    font-family: Roboto;
+
     font-size: 14px;
     height: 35px;
     display: flex;
@@ -152,14 +151,14 @@
     color: white;
     padding: 2px 5px;
     border-radius: 50%;
-    font-family: Roboto, Arial;
+ 
     font-size: 11px;
     font-weight: 700;
 
 }
 
 .notifications-icon {
-    height: 26px;
+    height: 25px;
 }
 
 .my-channel-picture {
