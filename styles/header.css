@@ -122,8 +122,9 @@
     border: none;
     border-radius: 20px;
 
-    font-size: 14px;
-    height: 35px;
+    font-size: 13px;
+    font-weight: 700;
+    height: 31px;
     display: flex;
     align-items: center;
     padding-left: 15px;
