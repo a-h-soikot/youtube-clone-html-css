@@ -22,7 +22,7 @@
 
 .menu-icon {
     height: 24px;
-    margin-left: 24px;
+    margin-left: 25px;
     margin-right: 24px;
 }
 
@@ -72,12 +72,19 @@
     background-color: rgb(248, 248, 248);
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(192, 192, 192)
+    border-color: rgb(192, 192, 192);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 .search-icon {
     height: 25px;
-    margin-top: 5px;
 }
 
 .voice-search-button {
@@ -89,11 +96,16 @@
     border-width: 1px;
     border-style: solid;
     border-color: rgb(192, 192, 192);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .voice-search-icon {
     height: 24px;
-    margin-top: 5px;
 }
 
 
@@ -122,8 +134,14 @@
 .span-plus-icon {
     font-size: 22px;
 }
+
 .div-notifications {
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .div-notification-count {
@@ -141,12 +159,43 @@
 }
 
 .notifications-icon {
-    height: 24px;
+    height: 26px;
 }
 
 .my-channel-picture {
     height: 32px;
     border-radius: 50%;
+}
+
+.search-button .tooltip,
+.voice-search-button .tooltip,
+.div-notifications .tooltip {
+    
+    position: absolute;
+    z-index: 150;
+    background-color: rgb(243, 242, 242);
+    padding: 3px 5px;
+    border-radius: 4px;
+    
+    bottom: -28px;
+    visibility: hidden;
+
+    cursor: default;
+    pointer-events: none;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.div-notifications:hover .tooltip {
+    
+    visibility: visible;
+    opacity: 1;
+
+    transition-delay: 0.7s;
 }
 
 
