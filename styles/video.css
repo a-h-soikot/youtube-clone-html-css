@@ -9,18 +9,23 @@
     font-weight: 500;
     text-align: justify;
     line-height: 20px;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .channel-name {
     margin-top: 0px;
     font-size: 13px;
     margin-bottom: 6px;
-    color: rgb(45, 45, 45)
+    color: var(--secondary-text-color);
+    transition: color 0.3s;
 }
 
 .video-stats {
     margin-top: 0px;
     font-size: 13px;
+    color: var(--secondary-text-color);
+    transition: color 0.3s;
 }
 
 
@@ -57,6 +62,10 @@
     font-weight: 700;
     padding: 2px 4px;
     border-radius: 3px;
+}
+
+[data-theme="dark"] .video-duration {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .div-channel-picture {

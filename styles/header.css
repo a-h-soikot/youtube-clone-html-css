@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: space-between;
     
-    background-color: white;
+    background-color: var(--background-color);
     
     position: fixed;
     top: 0px;
@@ -12,6 +12,7 @@
     right: 0px;
 
     z-index: 100;
+    transition: background-color 0.3s;
 }
 
 
@@ -20,10 +21,31 @@
     align-items: center;
 }
 
-.menu-icon {
-    height: 24px;
-    margin-left: 25px;
+.menu-button {
+    padding: 6px;
+    height: 36px;
+    width: 36px;
+    margin-left: 18px;
     margin-right: 24px;
+
+    background-color: var(--background-color);
+    border: none;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: var(--hover-color);
+    border-radius: 50%;
+}
+
+.menu-button:active {
+    background-color: var(--hover-color);
 }
 
 .youtube-logo {
@@ -48,36 +70,40 @@
     outline: none;
     border-style: solid;
     border-width: 1px;
-    border-color:rgb(192, 192, 192);
+    border-color: var(--search-border-color);
     border-radius: 20px 0 0 20px;
     padding-left: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
     
-    box-shadow: inset 1px 1px 0.5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 1px 1px 0.5px var(--shadow-color);
+    transition: box-shadow 0.2s ease-in-out, background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .search-bar:focus {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 6px var(--shadow-color);
 }
 
 .search-bar::placeholder {
     font-size: 15px;
+    color: var(--secondary-text-color);
 }
 
 .search-button {
     height: 40px;
     width: 60px;
     border-radius: 0px 20px 20px 0px;
-    background-color: rgb(248, 248, 248);
+    background-color: var(--search-background-color);
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(192, 192, 192);
+    border-color: var(--search-border-color);
 
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 
@@ -91,16 +117,17 @@
     width: 40px;
     margin-left: 12px;
     border-radius: 50%;
-    background-color: rgb(248, 248, 248);
+    background-color: var(--search-background-color);
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(192, 192, 192);
+    border-color: var(--search-border-color);
 
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .voice-search-icon {
@@ -113,7 +140,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 190px;
+    width: 240px;
     padding-right: 35px;
     flex-shrink: 0;
 }
@@ -121,6 +148,8 @@
 .create-button {
     border: none;
     border-radius: 20px;
+    background-color: var(--create-button-color);
+    color: var(--text-color);
 
     font-size: 13px;
     font-weight: 700;
@@ -129,6 +158,7 @@
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .span-plus-icon {
@@ -148,14 +178,14 @@
     position: absolute;
     top: -1px;
     right: -4px;
-    background-color: rgb(219, 19, 19);
+    background-color: var(--notification-color);
     color: white;
     padding: 2px 5px;
     border-radius: 50%;
  
     font-size: 11px;
     font-weight: 700;
-
+    transition: background-color 0.3s;
 }
 
 .notifications-icon {
@@ -167,15 +197,34 @@
     border-radius: 50%;
 }
 
+.theme-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.theme-toggle-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.menu-button .tooltip,
 .search-button .tooltip,
 .voice-search-button .tooltip,
-.div-notifications .tooltip {
+.div-notifications .tooltip,
+.theme-toggle .tooltip {
     
     position: absolute;
     z-index: 150;
-    background-color: rgb(243, 242, 242);
+    background-color: var(--tooltip-background);
+    color: var(--text-color);
     padding: 3px 5px;
     border-radius: 4px;
+    font-size: 13px;
     
     bottom: -28px;
     visibility: hidden;
@@ -185,12 +234,14 @@
     white-space: nowrap;
 
     opacity: 0;
-    transition: opacity 0.1s ease-in;
+    transition: opacity 0.1s ease-in, background-color 0.3s, color 0.3s;
 }
 
+.menu-button:hover .tooltip,
 .search-button:hover .tooltip,
 .voice-search-button:hover .tooltip,
-.div-notifications:hover .tooltip {
+.div-notifications:hover .tooltip,
+.theme-toggle:hover .tooltip {
     
     visibility: visible;
     opacity: 1;

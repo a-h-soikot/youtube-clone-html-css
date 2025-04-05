@@ -1,10 +1,11 @@
 .sidebar {
-    background-color: white;
+    background-color: var(--background-color);
     position: fixed;
     top: 55px;
     left: 5px;
     width: 62px;
     bottom: 0px;
+    transition: background-color 0.3s;
 }
 
 .div-sidebar-link {
@@ -24,10 +25,12 @@
 .div-sidebar-link div {
     font-size: 10px;
     margin-top: 6px;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 
 .div-sidebar-link:hover {
     cursor: pointer;
-    background-color: rgb(236, 236, 236);
+    background-color: var(--hover-color);
 }
