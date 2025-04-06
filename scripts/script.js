@@ -47,4 +47,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     updateThemeIcon();
+    
+    // Set initial padding based on sidebar state
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar.classList.contains('expanded')) {
+        document.body.style.paddingLeft = '240px';
+    } else {
+        document.body.style.paddingLeft = '90px';
+    }
+});
+
+document.querySelector('.menu-button').addEventListener('click', function() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('expanded');
+    
+    // Adjust body padding based on sidebar state
+    const body = document.body;
+    if (sidebar.classList.contains('expanded')) {
+        body.style.paddingLeft = '240px'; // Extra padding for expanded sidebar
+    } else {
+        body.style.paddingLeft = '90px'; // Default padding for collapsed sidebar
+    }
 });

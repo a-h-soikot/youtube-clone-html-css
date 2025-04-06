@@ -8,6 +8,43 @@
     transition: background-color 0.3s;
 }
 
+/* Add styles for the expanded sidebar */
+.sidebar.expanded {
+    width: 230px;
+    transition: width 0.3s;
+}
+
+.sidebar.expanded .space-keeper{
+    height: 8px;
+}
+
+.sidebar.expanded .div-sidebar-link {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 8px;
+    margin-right: 35px;
+    padding-left: 11px;
+    padding-right: 10px;
+    height: 40px; /* Reduced height when expanded */
+    margin-bottom: 2px; /* Reduced gap between links when expanded */
+}
+
+.sidebar.expanded .div-sidebar-link div {
+    font-size: 14px;
+    padding-left: 17px;
+    margin-top: 0;
+}
+
+
+
+
+.sidebar.expanded .sidebar-separator {
+    margin: 10px 12px;
+    width: 80%;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
 .div-sidebar-link {
     display: flex;
     flex-direction: column;
@@ -28,7 +65,6 @@
     color: var(--text-color);
     transition: color 0.3s;
 }
-
 
 .div-sidebar-link:hover {
     cursor: pointer;
