@@ -64,8 +64,73 @@ document.querySelector('.menu-button').addEventListener('click', function() {
     // Adjust body padding based on sidebar state
     const body = document.body;
     if (sidebar.classList.contains('expanded')) {
-        body.style.paddingLeft = '240px'; // Extra padding for expanded sidebar
+        body.style.paddingLeft = '240px'; // Padding for expanded sidebar
     } else {
         body.style.paddingLeft = '90px'; // Default padding for collapsed sidebar
+    }
+});
+
+// Handle voice search
+document.querySelector('.voice-search-button').addEventListener('click', function() {
+    const modal = document.getElementById('voice-search-modal');
+    const transcript = document.getElementById('voice-transcript');
+    modal.classList.add('active');
+    transcript.textContent = "Speak now...";
+
+    // Start voice recognition
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        
+        // Configure recognition
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        recognition.onspeechend = function() {
+            recognition.stop();
+        };
+
+        // Handle both interim and final results
+        recognition.onresult = function(event) {
+            // Get real-time speech results
+            const currentTranscript = Array.from(event.results)
+                .map(result => result[0].transcript)
+                .join('');
+                
+            // Display the transcription
+            transcript.textContent = currentTranscript || "Speak now...";
+            
+            // Check if the result is final
+            const isFinal = event.results[0].isFinal;
+            
+            if (isFinal) {
+                // Perform search with the recognized text
+                console.log('Final transcript:', currentTranscript);
+                const encodedSearchText = encodeURIComponent(currentTranscript);
+                window.location.href = `https://www.youtube.com/results?search_query=${encodedSearchText}`;
+            }
+        };
+
+        recognition.onerror = function(event) {
+            transcript.textContent = "Error: " + event.error;
+        };
+
+        // Start recognition
+        recognition.start();
+        window.recognitionInstance = recognition;
+    } else {
+        alert('This browser does not support voice recognition.');
+    }
+});
+
+// Close button
+document.getElementById('close-voice-search').addEventListener('click', function() {
+    const modal = document.getElementById('voice-search-modal');
+    modal.classList.remove('active');
+    
+    // Stop voice recognition if active
+    if (window.recognitionInstance) {
+        window.recognitionInstance.stop();
     }
 });
