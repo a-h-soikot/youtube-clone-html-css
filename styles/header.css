@@ -59,8 +59,9 @@
     align-items: center;
     flex: 1;
     max-width: 650px;
-    margin-left: 25px;
+    margin-left: 20px;
     margin-right: 25px;
+    padding-left: 120px;
 }
 
 .search-bar {
@@ -151,18 +152,19 @@
     background-color: var(--create-button-color);
     color: var(--text-color);
 
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     height: 31px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 17px 17px;
+    
     transition: background-color 0.3s, color 0.3s;
 }
 
 .span-plus-icon {
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: normal;
 }
 
 .div-notifications {
